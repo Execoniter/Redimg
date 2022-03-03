@@ -2,9 +2,22 @@
 
 @{ ViewData["Title"] = "Details"; }
 
-<h1>Details</h1>
-@*//hi*@
-<div>
+@*<h1>Details</h1>*@
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="content">
+
+    <img class="card-img-top image" src="@Model.ImageURL">
+    <a target="_blank" href="@Model.ProductPage" alt="View image">
+        <div class="rounded-circle circle circle-icon " style="width:50px; height:50px" alt="View i">
+            <i class="fas fa-share mt-1 ml-2" style="font-size: 36px; color: #343a40"></i>
+        </div>
+    </a>
+
+ 
+    
+</div>
+
+@*<div>
     <h4>Product</h4>
     <hr />
     <dl class="row">
@@ -45,7 +58,7 @@
             @Html.DisplayFor(model => model.Description)
         </dd>
     </dl>
-</div>
+</div>*@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>

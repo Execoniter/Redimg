@@ -12,20 +12,16 @@
     <div class="row">
         @foreach (var item in Model)
         {
-
             <div class="col-sm">
                 <div class="card" style="width: 13rem">
-                    <img class="card-img-top" src="@item.ImageURL" alt="Card image cap" href="@item.ProductPage">
+                    <a asp-action="Details" asp-route-id="@item.Id"><img class="card-img-top  ZoomIn" src="@item.ImageURL" alt="Card image cap" href="@item.ProductPage"></a>
                     <div class="card-body">
-                        <a href="@item.ProductPage"> <h5 class="card-title">@item.Name </h5></a>
-                        <h5 class="card-text">@item.Price</h5>
-                        <p class="card-text">@item.Description</p>
-                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-
+                        <h5 class="card-title">@item.Name </h5>
+                        @*<h5 class="card-text">@item.Price</h5>*@
+                        <p class="card-text clip">@item.Description</p>
                     </div>
                 </div>
             </div>
-
-        }
+         }
     </div>
 </div>
