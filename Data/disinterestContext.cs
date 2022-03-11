@@ -14,5 +14,7 @@ namespace disinterest.Models
         }
 
         public DbSet<disinterest.Models.Product> Product { get; set; }
+
+        public DbSet<disinterest.Models.User> User { get; set; }
     }
 }

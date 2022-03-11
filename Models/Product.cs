@@ -34,5 +34,7 @@ namespace disinterest.Models
         [StringLength(300)]
         [Required]
         public string Description { get; set; }
+
+        public virtual User User { get; set; }
     }
 }
