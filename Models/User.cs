@@ -12,16 +12,20 @@ namespace disinterest.Models
         public int Id { get; set; }
 
         [StringLength(16, MinimumLength = 3)]
-        [RegularExpression("@^[a-zA-Z][a-zA-Z0-9]*$")]
-        [Required]
+        [Required(ErrorMessage = "Username is required")]
         public string Name { get; set; }
 
         [DataType(DataType.EmailAddress)]
-        [Required]
+        [Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }
 
         [DataType(DataType.Password)]
+        [Required (ErrorMessage = "Password is required")]
         public string Password { get; set; }
+
+        [Required]
+        [Compare("Password", ErrorMessage ="Please confirm your password.")]
+        public string ConfirmPassword { get; set; }
 
         public ICollection<Product> Products { get; set; }
        

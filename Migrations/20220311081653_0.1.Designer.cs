@@ -10,8 +10,8 @@ using disinterest.Models;
 namespace disinterest.Migrations
 {
     [DbContext(typeof(disinterestContext))]
-    [Migration("20220311010743_Test_AddedUser")]
-    partial class Test_AddedUser
+    [Migration("20220311081653_0.1")]
+    partial class _01
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -62,6 +62,9 @@ namespace disinterest.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("ConfirmPassword")
+                        .IsRequired();
+
                     b.Property<string>("Email")
                         .IsRequired();
 
@@ -69,7 +72,8 @@ namespace disinterest.Migrations
                         .IsRequired()
                         .HasMaxLength(16);
 
-                    b.Property<string>("Password");
+                    b.Property<string>("Password")
+                        .IsRequired();
 
                     b.HasKey("Id");
 
